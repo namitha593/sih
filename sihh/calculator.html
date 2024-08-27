@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Footprint Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="calculator.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Water Footprint Calculator</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Calculate the Water Footprint</h2>
+        <form id="calculator-form">
+            <label for="product">Select Agricultural Product:</label>
+            <select id="product">
+                <option value="wheat">Wheat</option>
+                <option value="rice">Rice</option>
+                <option value="corn">Corn</option>
+                <!-- Add more options as needed -->
+            </select>
+
+            <fieldset>
+                <legend>Blue Water Footprint</legend>
+                <label for="evaporated-blue-water">Evaporated Blue Water (m³):</label>
+                <input type="number" id="evaporated-blue-water" step="0.01">
+
+                <label for="blue-water-included">Blue Water Included in the Product (m³):</label>
+                <input type="number" id="blue-water-included" step="0.01">
+
+                <label for="amount-of-drainage">Amount of Drainage (m³):</label>
+                <input type="number" id="amount-of-drainage" step="0.01">
+            </fieldset>
+
+            <fieldset>
+                <legend>Green Water Footprint</legend>
+                <label for="green-water-evaporated">Green Water Evaporated (m³):</label>
+                <input type="number" id="green-water-evaporated" step="0.01">
+
+                <label for="green-water-included">Green Water Included in the Product (m³):</label>
+                <input type="number" id="green-water-included" step="0.01">
+            </fieldset>
+
+            <fieldset>
+                <legend>Grey Water Footprint</legend>
+                <label for="pollutant-load">Pollutant Load (kg):</label>
+                <input type="number" id="pollutant-load" step="0.01">
+
+                <label for="max-concentration">Maximum Measured Concentration (mg/L):</label>
+                <input type="number" id="max-concentration" step="0.01">
+
+                <label for="natural-concentration">Natural Concentration (mg/L):</label>
+                <input type="number" id="natural-concentration" step="0.01">
+
+               
+            </fieldset>
+
+            <button type="button" onclick="calculateWaterFootprint()">Calculate</button>
+        </form>
+
+        <div id="result">
+            <h3>Results:</h3>
+            <p id="blue-water-result">Blue Water Footprint: </p>
+            <p id="green-water-result">Green Water Footprint: </p>
+            <p id="grey-water-result">Grey Water Footprint: </p>
+            
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Water Footprint Project</p>
+    </footer>
+</body>
+</html>
